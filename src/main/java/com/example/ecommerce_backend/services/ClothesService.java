@@ -11,6 +11,5 @@ public interface ClothesService {
     void addClothes(ClothesEntity clothesEntity);
     void deleteClothes(ClothesEntity clothesEntity);
 
-    List<ClothesEntity> getClothesByCategoryId(String categoryId);
 
 }

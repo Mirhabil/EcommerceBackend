@@ -15,13 +15,13 @@ import java.util.List;
 public class CategoryEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
 
-//    @JsonManagedReference
-//    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
-//    List<ClothesEntity> clothesList;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
+    List<ClothesEntity> clothesList;
 
+    @Column
     String categoryName;
 }

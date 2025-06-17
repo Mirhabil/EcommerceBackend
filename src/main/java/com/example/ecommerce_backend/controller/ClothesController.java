@@ -34,10 +34,6 @@ public class ClothesController {
         clothesManager.deleteClothes(clothesEntity);
     }
 
-    @GetMapping("/getByCategoryId/{categoryId}")
-    List<ClothesEntity> getClothesByCategoryId(@PathVariable String categoryId){
-        return clothesManager.getClothesByCategoryId(categoryId);
-    }
 
 
 

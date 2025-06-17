@@ -31,9 +31,5 @@ public class ClothesManager implements ClothesService {
         clothesRepository.delete(clothesEntity);
     }
 
-    @Override
-    public List<ClothesEntity> getClothesByCategoryId(String categoryId) {
-        return clothesRepository.findByCategoryId(categoryId);
-    }
 
 }

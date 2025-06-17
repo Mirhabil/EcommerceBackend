@@ -19,27 +19,24 @@ public class CategoryController {
 //    ClothesManager clothesManager=new ClothesManager();
 
     @GetMapping("/allCategory")
-    List<CategoryEntity> getAllClothes(){
+    List<CategoryEntity> getAllClothes() {
         return categoryManager.getAllCategories();
     }
 
     @PostMapping("/addCategory")
-    void addClothes(@RequestBody CategoryEntity clothesEntity){
+    void addClothes(@RequestBody CategoryEntity clothesEntity) {
         categoryManager.addCategories(clothesEntity);
     }
 
     @DeleteMapping("/deleteCategory")
-    void deleteClothes(@RequestBody CategoryEntity clothesEntity){
+    void deleteClothes(@RequestBody CategoryEntity clothesEntity) {
         categoryManager.deleteCategories(clothesEntity);
     }
 
     @GetMapping("/allCategory/{id}")
-    CategoryEntity getCategoryById(@PathVariable int id){
+    CategoryEntity getCategoryById(@PathVariable int id) {
         return categoryManager.getCategoryById(id);
     }
-
-
-
 
 
 }

@@ -10,5 +10,4 @@ import java.util.Optional;
 @Repository
 public interface ClothesRepository extends JpaRepository<ClothesEntity, Integer> {
 
-    List<ClothesEntity> findByCategoryId(String categoryId);
 }

@@ -1,5 +1,6 @@
 package com.example.ecommerce_backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -42,13 +43,11 @@ public class ClothesEntity {
     @Column
     Integer totalStock;
 
-//    @JoinColumn(name = "category_id",nullable = false)
-//    @JsonBackReference
-//    @ManyToOne()
-//    CategoryEntity category;
+    @JoinColumn(name = "category_id")
+    @JsonBackReference
+    @ManyToOne()
+    CategoryEntity category;
 
-    @Column(name = "category_id")
-    String categoryId;
 
     @Column
     String clothesImage;
