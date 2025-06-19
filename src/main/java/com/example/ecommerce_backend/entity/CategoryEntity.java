@@ -1,5 +1,6 @@
 package com.example.ecommerce_backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,12 +14,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CategoryEntity {
-
     @Id
     private Integer id;
 
 
-    @JsonManagedReference
+    @JsonIgnoreProperties("category")
     @OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
     List<ClothesEntity> clothesList;
 

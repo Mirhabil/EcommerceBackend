@@ -1,6 +1,7 @@
 package com.example.ecommerce_backend.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -44,7 +45,7 @@ public class ClothesEntity {
     Integer totalStock;
 
     @JoinColumn(name = "category_id")
-    @JsonBackReference
+    @JsonIgnoreProperties("clothesList")
     @ManyToOne()
     CategoryEntity category;
 
