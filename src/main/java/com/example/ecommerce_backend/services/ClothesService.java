@@ -7,9 +7,13 @@ import java.util.List;
 
 public interface ClothesService {
 
+
+
     List<ClothesEntity> getAllClothes();
     void addClothes(ClothesEntity clothesEntity);
     void deleteClothes(ClothesEntity clothesEntity);
+    void updateClothes(int clothesId);
+    ClothesEntity getClothesById(int clothesId);
 
 
 }

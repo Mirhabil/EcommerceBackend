@@ -31,5 +31,18 @@ public class ClothesManager implements ClothesService {
         clothesRepository.delete(clothesEntity);
     }
 
+    @Override
+    public void updateClothes(int clothesId) {
+        clothesRepository.findById(clothesId).map(clothes-> {
+            clothes.setFavorite(!clothes.isFavorite());
+            return clothesRepository.save(clothes);
+        }).orElseThrow(() -> new RuntimeException("User not found with ID: " + clothesId));;
+    }
+
+    @Override
+    public ClothesEntity getClothesById(int clothesId) {
+        return clothesRepository.findById(clothesId).get();
+    }
+
 
 }

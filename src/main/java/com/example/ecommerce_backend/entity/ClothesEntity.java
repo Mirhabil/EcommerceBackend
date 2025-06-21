@@ -53,4 +53,7 @@ public class ClothesEntity {
     @Column
     String clothesImage;
 
+    @Column
+    boolean isFavorite;
+
 }

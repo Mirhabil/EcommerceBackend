@@ -20,23 +20,29 @@ public class ClothesController {
 //    ClothesManager clothesManager=new ClothesManager();
 
     @GetMapping("/allClothes")
-    List<ClothesEntity> getAllClothes(){
+    List<ClothesEntity> getAllClothes() {
         return clothesManager.getAllClothes();
     }
 
     @PostMapping("/addClothes")
-    void addClothes(@RequestBody ClothesEntity clothesEntity){
+    void addClothes(@RequestBody ClothesEntity clothesEntity) {
         clothesManager.addClothes(clothesEntity);
     }
 
     @DeleteMapping("/deleteClothes")
-    void deleteClothes(@RequestBody ClothesEntity clothesEntity){
+    void deleteClothes(@RequestBody ClothesEntity clothesEntity) {
         clothesManager.deleteClothes(clothesEntity);
     }
 
+    @PutMapping("/updateClothes")
+    void updateClothes(@RequestBody ClothesEntity clothesEntity) {
+        clothesManager.updateClothes(clothesEntity.getClothesId());
+    }
 
-
-
+    @GetMapping("/getClothesById/{id}")
+    ClothesEntity getClothesById(@PathVariable int id) {
+        return clothesManager.getClothesById(id);
+    }
 
 
 }
