@@ -44,5 +44,10 @@ public class ClothesController {
         return clothesManager.getClothesById(id);
     }
 
+    @PutMapping("/updateClothesChart")
+    void updateClothesChart(@RequestBody ClothesEntity clothesEntity) {
+        clothesManager.addToChartById(clothesEntity.getClothesId());
+    }
+
 
 }

@@ -36,12 +36,20 @@ public class ClothesManager implements ClothesService {
         clothesRepository.findById(clothesId).map(clothes-> {
             clothes.setFavorite(!clothes.isFavorite());
             return clothesRepository.save(clothes);
-        }).orElseThrow(() -> new RuntimeException("User not found with ID: " + clothesId));;
+        }).orElseThrow(() -> new RuntimeException("User not found with ID: " + clothesId));
     }
 
     @Override
     public ClothesEntity getClothesById(int clothesId) {
         return clothesRepository.findById(clothesId).get();
+    }
+
+    @Override
+    public void addToChartById(int clothesId) {
+        clothesRepository.findById(clothesId).map(clothes-> {
+            clothes.setAddedToChart(!clothes.isAddedToChart());
+            return clothesRepository.save(clothes);
+        }).orElseThrow(() -> new RuntimeException("User not found with ID: " + clothesId));
     }
 
 

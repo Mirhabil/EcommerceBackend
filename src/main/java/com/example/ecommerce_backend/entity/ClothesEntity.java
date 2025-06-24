@@ -56,4 +56,10 @@ public class ClothesEntity {
     @Column
     boolean isFavorite;
 
+    @Column
+    boolean isAddedToChart;
+
+    @Column
+    int itemCount;
+
 }

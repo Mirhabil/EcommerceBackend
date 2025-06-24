@@ -14,6 +14,7 @@ public interface ClothesService {
     void deleteClothes(ClothesEntity clothesEntity);
     void updateClothes(int clothesId);
     ClothesEntity getClothesById(int clothesId);
+    void addToChartById(int clothesId);
 
 
 }
